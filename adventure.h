@@ -3,7 +3,8 @@
 class Player
 {
     private:
-
+        Player();
+        ~Player();
     public:
 
 };
@@ -11,8 +12,10 @@ class Player
 class World
 {
     private:
-
+        World();
+        ~World();
     public:
+
 };
 class Building
 {
@@ -33,7 +36,9 @@ class Library : public Building
 {
     private:
 
-    public: 
+    public:
+        Library();
+        ~Library();
         getCoffee();
 };
 
@@ -41,7 +46,9 @@ class Moody : public Building
 {
     private:
 
-    public:         
+    public:
+        Moody();
+        ~Moody();      
         void worship(); 
 };
 
@@ -49,14 +56,18 @@ class RecCenter : class Building
 {
     private:
 
-    public: 
+    public:
+        RecCenter();
+        ~RecCenter();
         void workOut();
 };
-class campusCenter : public Building
+class CampusCenter : public Building
 {
 	private:
 		//
-	public:
+    public:
+        CampusCenter();
+        ~CampusCenter();
 		void eatAtBean();
 };
 
@@ -64,33 +75,41 @@ class MBB : public Building
 {
 	private:
 		//
-	public:
+    public:
+        MBB();
+        ~MBB();
 		void goToClass();
 		void isOnTime();
 };
 
-class barretHall : public Building
+class BarretHall : public Building
 {
 	private:
 		//
-	public:
+    public:
+        BarretHall();
+        ~BarretHall();
 		void sleep();
 };
 class SchoolSupplies
 {
 	private:
 		 isOwned;
-	public:
+    public:
+        SchoolSupplies();
+        ~SchoolSupplies();
 		virtual void pickUp() = 0;
 		virtual void examine() = 0;
 		
 };
 
-class SchoolSupplies : TextBook
+class TextBook : public SchoolSupplies 
 {
 	private:
 		string title, text, author;
-	public:
+    public:
+        TextBook();
+        ~TextBook();
 		void pickUp();
 		void examine();
 		void open();
@@ -99,22 +118,27 @@ class SchoolSupplies : TextBook
 		
 };
 
-class SchoolSupplies : ID
+class ID : public SchoolSupplies
 {
 	private:
 		string name;
 		int banner;
-	public:
+    public:
+        ID();
+        ~ID();
 		void pickUp();
 		void examine();
 };
 
-class SchoolSupplies : Laptop
+class Laptop : SchoolSupplies
 {
 	private:
 		int batteryPercentage;
 		string OS;
-	public:
+    public:
+        Laptop();
+        ~Laptop();
+
 		void pickUp();
 		void examine();
 		void isDead();
@@ -122,12 +146,14 @@ class SchoolSupplies : Laptop
 		void charge();
 };
 
-class SchoolSupplies : Backpack
+class Backpack : SchoolSupplies
 {
 	private:
 		int size;
 		string whatItems[100];
-	public:
+    public:
+        Backpack();
+        ~Backpack();
 		void pickUp();
 		void examine();
 		void isEmpty();
@@ -136,11 +162,13 @@ class SchoolSupplies : Backpack
 		void contains();
 };
 
-class SchoolSupplies : Charger
+class Charger : SchoolSupplies
 {
 	private:
 		void isPluggedIn;
-	public:
+    public:
+        Charger();
+        ~Charger();
 		void pickUp();
 		void examine();
 };
