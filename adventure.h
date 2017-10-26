@@ -1,6 +1,19 @@
 #include <iostream>
 #include <cmath>
+class Player
+{
+    private:
 
+    public:
+
+}
+
+class World
+{
+    private:
+
+    public:
+}
 class Building
 {
     private:
@@ -9,6 +22,8 @@ class Building
         bool isLocked;
         int* hasItems;
     public:
+        Building();
+        ~Building();
         virtual void enter;
         virtual void exit;
         virtual void search; 
