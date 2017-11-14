@@ -1,22 +1,36 @@
 #include <iostream>
 #include <cmath>
 #include <sstream>
-class Player
-{
-    private:
-        Player();
-        ~Player();
-    public:
-
-};
+#include <string>
+using namespace std;
+	
+bool gamecomplete = false; 
+   
 
 class World
 {
     private:
-        World();
-        ~World();
+		
     public:
+    	//world constructor could call all our building constructors 
+	    World();
+        ~World();
+        void MoveAround(string UserInput);
+		  
+        
+};
+class Player
+{
+    private:
+		bool exists;
+        
+    public:
+    	class invalidMove{};
 
+	    Player(){ exists = true; }
+        ~Player(){}
+    	void move(string userinput);
+    	
 };
 class Building
 {
@@ -26,13 +40,16 @@ class Building
         bool isLocked;
         int* hasItems;
     public:
-        Building();
-        ~Building();
-        virtual void enter;
-        virtual void exit;
-        virtual void search; 
+    	// 
+        Building(){}
+        virtual ~Building(){}
+        
+        virtual void enter();
+        virtual void exit();
+        virtual void search(); 
 
 };
+
 class Library : public Building
 {
     private:
@@ -41,6 +58,11 @@ class Library : public Building
         Library();
         ~Library();
         getCoffee();
+           
+        void enter();
+        void exit();
+        void search(); 
+
 };
 
 class Moody : public Building
@@ -50,10 +72,14 @@ class Moody : public Building
     public:
         Moody();
         ~Moody();      
-        void worship(); 
+        void worship();
+        
+        void enter();
+        void exit();
+        void search(); 
 };
 
-class RecCenter : class Building
+class RecCenter : public Building
 {
     private:
 
@@ -61,6 +87,10 @@ class RecCenter : class Building
         RecCenter();
         ~RecCenter();
         void workOut();
+                   
+        void enter();
+        void exit();
+        void search(); 
 };
 class CampusCenter : public Building
 {
@@ -70,6 +100,10 @@ class CampusCenter : public Building
         CampusCenter();
         ~CampusCenter();
 		void eatAtBean();
+		           
+        void enter();
+        void exit();
+        void search(); 
 };
 
 class MBB : public Building
@@ -81,6 +115,10 @@ class MBB : public Building
         ~MBB();
 		void goToClass();
 		void isOnTime();
+		           
+        void enter();
+        void exit();
+        void search(); 
 };
 
 class BarretHall : public Building
@@ -91,11 +129,17 @@ class BarretHall : public Building
         BarretHall();
         ~BarretHall();
 		void sleep();
+		           
+        void enter();
+        void exit();
+        void search(); 
 };
+
+
 class SchoolSupplies
 {
 	private:
-		 isOwned;
+		bool isOwned;
     public:
         SchoolSupplies();
         ~SchoolSupplies();
@@ -131,7 +175,7 @@ class ID : public SchoolSupplies
 		void examine();
 };
 
-class Laptop : SchoolSupplies
+class Laptop : public SchoolSupplies
 {
 	private:
 		int batteryPercentage;
@@ -147,7 +191,7 @@ class Laptop : SchoolSupplies
 		void charge();
 };
 
-class Backpack : SchoolSupplies
+class Backpack :public SchoolSupplies
 {
 	private:
 		int size;
@@ -163,13 +207,15 @@ class Backpack : SchoolSupplies
 		void contains();
 };
 
-class Charger : SchoolSupplies
+class Charger : public SchoolSupplies
 {
 	private:
-		void isPluggedIn;
+		bool isPluggedIn;
     public:
         Charger();
         ~Charger();
 		void pickUp();
 		void examine();
 };
+
+
