@@ -1,23 +1,31 @@
 #include <iostream>
 #include <cmath>
 #include <sstream>
+using namespace std;
+
 class Player
 {
     private:
-        Player();
-        ~Player();
+		
+        
     public:
-
+	    Player();
+        ~Player();
+        
+        
+        	
 };
 
 class World
 {
     private:
-        World();
-        ~World();
-    public:
 
+    public:
+    	//world constructor could call all our building constructors 
+	    World();
+        ~World();
 };
+
 class Building
 {
     private:
@@ -26,13 +34,16 @@ class Building
         bool isLocked;
         int* hasItems;
     public:
-        Building();
-        ~Building();
-        virtual void enter;
-        virtual void exit;
-        virtual void search; 
+    	// 
+        Building(){}
+        virtual ~Building(){}
+        
+        virtual void enter();
+        virtual void exit();
+        virtual void search(); 
 
 };
+
 class Library : public Building
 {
     private:
@@ -41,6 +52,11 @@ class Library : public Building
         Library();
         ~Library();
         getCoffee();
+           
+        void enter();
+        void exit();
+        void search(); 
+
 };
 
 class Moody : public Building
@@ -50,7 +66,11 @@ class Moody : public Building
     public:
         Moody();
         ~Moody();      
-        void worship(); 
+        void worship();
+        
+        void enter();
+        void exit();
+        void search(); 
 };
 
 class RecCenter : class Building
@@ -61,6 +81,10 @@ class RecCenter : class Building
         RecCenter();
         ~RecCenter();
         void workOut();
+                   
+        void enter();
+        void exit();
+        void search(); 
 };
 class CampusCenter : public Building
 {
@@ -70,6 +94,10 @@ class CampusCenter : public Building
         CampusCenter();
         ~CampusCenter();
 		void eatAtBean();
+		           
+        void enter();
+        void exit();
+        void search(); 
 };
 
 class MBB : public Building
@@ -81,6 +109,10 @@ class MBB : public Building
         ~MBB();
 		void goToClass();
 		void isOnTime();
+		           
+        void enter();
+        void exit();
+        void search(); 
 };
 
 class BarretHall : public Building
@@ -91,7 +123,13 @@ class BarretHall : public Building
         BarretHall();
         ~BarretHall();
 		void sleep();
+		           
+        void enter();
+        void exit();
+        void search(); 
 };
+
+
 class SchoolSupplies
 {
 	private:
