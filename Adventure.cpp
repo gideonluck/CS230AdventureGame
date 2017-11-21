@@ -80,6 +80,7 @@ void Library::getCoffee()
 			Library::doThis(userInput);
 		}
 		catch(Library::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -99,6 +100,7 @@ void Library::enter()
 			Library::doThis(userInput);
 		}
 		catch(Library::tryagain){
+			tryWorked = false;
 			cin >> userInput;
 		}
 	}
@@ -119,6 +121,7 @@ void Library::exit()
 			Player::move(userInput);	
 		}
 		catch(Player::invalidMove){
+			tryWorked = false;
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
 			cin >> userInput;
 		}
@@ -178,6 +181,7 @@ void Moody::enter()
 			Moody::doThis(userInput);
 		}
 		catch(Moody::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -198,7 +202,7 @@ void Moody::exit()
 			Player::move(userInput);	
 		}
 		catch(Player::invalidMove){
-			
+			tryWorked = false;
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
 			cin >> userInput;
 		}
@@ -230,6 +234,7 @@ void Moody::Worship()
 			Moody::doThis(userInput);
 		}
 		catch(Moody::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -281,6 +286,7 @@ void RecCenter::enter()
 			RecCenter::doThis(userInput);
 		}
 		catch(RecCenter::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -305,7 +311,7 @@ void RecCenter::exit()
 			Player::move(userInput);	
 		}
 		catch(Player::invalidMove){
-			
+			tryWorked = false;
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
 			cin >> userInput;
 		}
@@ -337,6 +343,7 @@ void RecCenter::Workout()
 			RecCenter::doThis(userInput);
 		}
 		catch(RecCenter::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -387,6 +394,7 @@ void CampusCenter::enter()
 			CampusCenter::doThis(userInput);
 		}
 		catch(CampusCenter::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -408,7 +416,7 @@ void CampusCenter::exit()
 			Player::move(userInput);	
 		}
 		catch(Player::invalidMove){
-			
+			tryWorked = false;
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
 			cin >> userInput;
 		}
@@ -442,6 +450,7 @@ int CampusCenter::eatAtBean()
 			CampusCenter::doThis(userInput);
 		}
 		catch(CampusCenter::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -491,6 +500,7 @@ void BarretHall::enter()
 			BarretHall::doThis(userInput);
 		}
 		catch(BarretHall::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -512,7 +522,7 @@ void BarretHall::exit()
 			Player::move(userInput);	
 		}
 		catch(Player::invalidMove){
-			
+			tryWorked = false;
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
 			cin >> userInput;
 		}
@@ -543,6 +553,7 @@ void BarretHall::sleep()
 			BarretHall::doThis(userInput);
 		}
 		catch(BarretHall::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -600,6 +611,7 @@ void MBB::enter()
 			MBB::doThis(userInput);
 		}
 		catch(MBB::tryagain){
+			tryWorked = false;
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
 			cin >> userInput;
 		}
@@ -622,7 +634,7 @@ void MBB::exit()
 			Player::move(userInput);	
 		}
 		catch(Player::invalidMove){
-			
+			tryWorked = false;
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
 			cin >> userInput;
 		}
