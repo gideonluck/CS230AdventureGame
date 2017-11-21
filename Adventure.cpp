@@ -43,6 +43,12 @@ void Player::move(string userinput)
 	if(excepted  == true )
 		throw invalidMove();
 }
+
+
+////////////////////////
+//	  Library         //
+///////////////////////
+
 Library::Library()
 {
     location = 1;
@@ -69,7 +75,7 @@ void Library::getCoffee()
 		}
 		catch(Library::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			Library::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 }
@@ -87,8 +93,7 @@ void Library::enter()
 			Library::doThis(userInput);
 		}
 		catch(Library::tryagain){
-			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			Library::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 		
@@ -108,9 +113,8 @@ void Library::exit()
 			Player::move(userInput);	
 		}
 		catch(Player::invalidMove){
-			
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
-			
+			cin >> userInput;
 		}
 	}
 }
@@ -145,7 +149,6 @@ Moody::Moody()
     location = 1;
     hasBeenVisited = false;
     isLocked = false;
-
 }
 
 Moody::~Moody()
@@ -168,10 +171,9 @@ void Moody::enter()
 		}
 		catch(Moody::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			Moody::doThis(userInput);
+			cin >> userInput;
 		}
-	}
-		
+	}		
 }
 void Moody::exit()
 {
@@ -190,7 +192,7 @@ void Moody::exit()
 		catch(Player::invalidMove){
 			
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
-			
+			cin >> userInput;
 		}
 	}
 }
@@ -219,7 +221,7 @@ void Moody::Worship()
 		}
 		catch(Moody::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			Moody::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 }
@@ -268,7 +270,7 @@ void RecCenter::enter()
 		}
 		catch(RecCenter::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			RecCenter::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 		
@@ -290,7 +292,7 @@ void RecCenter::exit()
 		catch(Player::invalidMove){
 			
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
-			
+			cin >> userInput;
 		}
 	}
 }
@@ -319,7 +321,7 @@ void RecCenter::Workout()
 		}
 		catch(RecCenter::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			RecCenter::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 }
@@ -369,7 +371,7 @@ void CampusCenter::enter()
 		}
 		catch(CampusCenter::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			CampusCenter::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 		
@@ -391,7 +393,7 @@ void CampusCenter::exit()
 		catch(Player::invalidMove){
 			
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
-			
+			cin >> userInput;
 		}
 	}
 }
@@ -422,7 +424,7 @@ int CampusCenter::eatAtBean()
 		}
 		catch(CampusCenter::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			CampusCenter::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 }
@@ -471,7 +473,7 @@ void BarretHall::enter()
 		}
 		catch(BarretHall::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			BarretHall::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 		
@@ -493,7 +495,7 @@ void BarretHall::exit()
 		catch(Player::invalidMove){
 			
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
-			
+			cin >> userInput;
 		}
 	}
 }
@@ -521,7 +523,7 @@ void BarretHall::sleep()
 		}
 		catch(BarretHall::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			BarretHall::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 }
@@ -571,7 +573,7 @@ void MBB::enter()
 		}
 		catch(MBB::tryagain){
 			cout << "That's not a valid command. For a list of valid commands type 'help'." << endl;
-			MBB::doThis(userInput);
+			cin >> userInput;
 		}
 	}
 		
@@ -579,11 +581,11 @@ void MBB::enter()
 
 void MBB::exit()
 {
-	;
+	int doNothing = 5;
 }
 void MBB::search()
 {
-	;
+	int doNothing = 5;
 }
 int MBB::goToClass()
 {

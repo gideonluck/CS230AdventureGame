@@ -13,9 +13,7 @@ class World
     	//world constructor could call all our building constructors 
 	    World();
         ~World();
-        void MoveAround(string UserInput);
-		  
-        
+        void MoveAround(string UserInput);     
 };
 class Player
 {
@@ -27,8 +25,7 @@ class Player
 	    Player(){ exists = true; }
         ~Player(){ exists = false; }
         
-    	static void move(string userinput);
-    	
+    	static void move(string userinput);	
 };
 class Building
 {
@@ -157,7 +154,6 @@ class MBB : public Building
         MBB();
         ~MBB();
 		int goToClass();
-		//void isOnTime();
 		void exit();
 		void search();
         void enter();
