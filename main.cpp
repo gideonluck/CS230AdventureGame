@@ -26,7 +26,7 @@ int main()
 			
 		}
 		catch(Player::invalidMove){
-			
+			tryWorked = false;
 			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
 			cin >> userInput;
 		}
