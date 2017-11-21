@@ -1,0 +1,7 @@
+The goal of this game is to check buildings on campus for your school supplies, before going to class where you'll need them. 
+Some items need to be found before certain buildings can be checked.
+You have to have your ID before you can look for other items in the Rec Center.
+You must find all of your items before you can get the win state inside the business building. 
+
+Some buildings let you do building specific things in them.(You can eat in the bean, try that one out.)
+

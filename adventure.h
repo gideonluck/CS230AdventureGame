@@ -146,4 +146,3 @@ class MBB : public Building
         void enter();
         void doThis(string userInput);
 };
-

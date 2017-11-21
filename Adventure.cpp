@@ -171,7 +171,7 @@ Moody::~Moody()
 void Moody::enter()
 { 
 	string userInput;
-	cout << "You have entered Moody Coliseum, you think you have left your ID card here. You may search for items by entering in 'Search'";
+	cout << "You have entered Moody Coliseum, you think you have left your ID card here." << endl << "You may search for items by entering in 'Search'";
 	cout << " or you may 'Worship' or you may leave by entering 'Exit'." << endl;
 	cin >> userInput;
 	bool tryWorked = false;
@@ -215,7 +215,7 @@ void Moody::search()
 	Player::howMany++;
 	
 	Player::items[1] = "ID Card"; 
-	cout << "You've found your ID card! " << endl << "You're one step closer to getting to that test!" << endl;
+	cout << "You've found your ID card! " << endl  << "You'll need that to get into the Rec Center" << endl <<"You're one step closer to getting to that test!" << endl;
 	cout << "You should keep looking for the rest of your supplies." << endl;
 
 	hasBeenVisited = true;
@@ -478,7 +478,7 @@ BarretHall::~BarretHall()
 void BarretHall::enter()
 {
 	string userInput;
-	cout << "You have entered Barret Hall, you think you have left your laptop charger here. You may search for items by entering in 'Search'";
+	cout << "You have entered Barret Hall, you think you have left your laptop charger here." << endl << "You may search for items by entering in 'Search'";
 	cout << " or you may 'sleep'. You may leave by entering 'Exit'." << endl;
 	cin >> userInput;
 	bool tryWorked = false;
@@ -589,7 +589,7 @@ void MBB::enter()
 				MBB().exit();
 			}
 	}
-	cout << "You have entered the Mabee Business Building , you have all of the items.";
+	cout << "You have entered the Mabee Business Building, you have all of the items.";
 	cout << "You may go to class by entering 'goToClass'." << endl;
 	cin >> userInput;
 	bool tryWorked = false;
@@ -611,7 +611,7 @@ void MBB::enter()
 void MBB::exit()
 {
 	string userInput;
-	cout << "You do not have all  of your school supplies, you must leave at once. Enter a building you would like to go to." << endl;
+	cout << "You do not have all of your school supplies, you must leave at once. Enter a building you would like to go to." << endl;
 	cin >> userInput;
 	
 	bool tryWorked = false;
@@ -636,9 +636,9 @@ void MBB::search()
 int MBB::goToClass()
 {
 	string userInput;
-	cout << "You decided to go to class...";
-	cout << "It was excactly on time...great job you made it to class on time which should not be an acclompishment.";
-	cout << " It is class and it should be expected that you get there on time.";
+	cout << "You decided to go to class..." << endl;
+	cout << "It was excactly on time...great job you made it to class on time which should not be an acclompishment."<< endl;
+	cout << "It is class and it should be expected that you get there on time."<< endl;
 	return 0;
 }
 void MBB::doThis(string userInput)
