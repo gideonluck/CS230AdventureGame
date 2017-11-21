@@ -33,8 +33,6 @@ class Building
     private:
         double location;
         bool hasBeenVisited;
-        bool isLocked;
-        int* hasItems;
     public:
     	// 
         Building(){location = 0; }
@@ -51,8 +49,6 @@ class Library : public Building
     private:
 	    double location;
         bool hasBeenVisited;
-        bool isLocked;
-        int* hasItems;
     public:
     	class tryagain{};
         Library();
@@ -72,8 +68,6 @@ class Moody : public Building
     private:
         double location;
         bool hasBeenVisited;
-        bool isLocked;
-        int* hasItems;
 
     public:
     	class tryagain{};
@@ -92,8 +86,6 @@ class RecCenter : public Building
     private:
         double location;
         bool hasBeenVisited;
-        bool isLocked;
-        int* hasItems;
     public:
     	class tryagain{};
         RecCenter();
@@ -110,8 +102,6 @@ class CampusCenter : public Building
 	private:
 		double location;
         bool hasBeenVisited;
-        bool isLocked;
-        int* hasItems;
     public:
     	class tryagain{};
         CampusCenter();
@@ -129,8 +119,6 @@ class BarretHall : public Building
 	private:
 		double location;
         bool hasBeenVisited;
-        bool isLocked;
-        int* hasItems;
     public:
     	class tryagain{};
         BarretHall();
@@ -148,8 +136,6 @@ class MBB : public Building
 	private:
 		double location;
         bool hasBeenVisited;
-        bool isLocked;
-        int* hasItems;
     public:
     	class tryagain{};
         MBB();
@@ -161,88 +147,3 @@ class MBB : public Building
         void doThis(string userInput);
 };
 
-
-
-//
-//class SchoolSupplies
-//{
-//	private:
-//		bool isOwned;
-//    public:
-//        SchoolSupplies();
-//        ~SchoolSupplies();
-//		virtual void pickUp() = 0;
-//		virtual void examine() = 0;
-//		
-//};
-//
-//class TextBook : public SchoolSupplies 
-//{
-//	private:
-//		string title, text, author;
-//    public:
-//        TextBook();
-//        ~TextBook();
-//		void pickUp();
-//		void examine();
-//		void open();
-//		void close();
-//		
-//		
-//};
-//
-//class ID : public SchoolSupplies
-//{
-//	private:
-//		string name;
-//		int banner;
-//    public:
-//        ID();
-//        ~ID();
-//		void pickUp();
-//		void examine();
-//};
-//
-//class Laptop : public SchoolSupplies
-//{
-//	private:
-//		int batteryPercentage;
-//		string OS;
-//    public:
-//        Laptop();
-//        ~Laptop();
-//
-//		void pickUp();
-//		void examine();
-//		void isDead();
-//		void browseWeb();
-//		void charge();
-//};
-//
-//class Backpack :public SchoolSupplies
-//{
-//	private:
-//		int size;
-//		string whatItems[100];
-//    public:
-//        Backpack();
-//        ~Backpack();
-//		void pickUp();
-//		void examine();
-//		void isEmpty();
-//		void get();
-//		void place();
-//		void contains();
-//};
-//
-//class Charger : public SchoolSupplies
-//{
-//	private:
-//		bool isPluggedIn;
-//    public:
-//        Charger();
-//        ~Charger();
-//		void pickUp();
-//		void examine();
-//};
-//

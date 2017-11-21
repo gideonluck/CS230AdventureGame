@@ -8,7 +8,7 @@ int main()
 	Player();
 	
 	// initial prompt to player about the game
-	cout << " WAKE UP!!! You've got a test in OOP today. \n You stayed up all night studying and you've left the things you need in various buildings across campus that you visited last night. \n What building would you like to go to first? \n";
+	cout << "WAKE UP!!! You've got a test in OOP today. \nYou stayed up all night studying and you've left the things you need in various buildings across campus that you visited last night. \nWhat building would you like to go to first? \n";
 	// give the user options (which building do you want to try to  go to)
 	//	type a building name or help to see ooptions 
 	
