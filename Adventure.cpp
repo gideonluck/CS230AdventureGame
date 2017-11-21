@@ -15,6 +15,12 @@ World::~World()
 {
 
 }
+int Player::howMany = 0;	
+string Player::items[5];
+Player::Player()
+{
+	exists = true;
+}
 void Player::move(string userinput) 
 {
 	string places[6] = {"Library", "Moody", "RecCenter", "CampusCenter", "MBB", "BarretHall"}; 
@@ -121,6 +127,8 @@ void Library::exit()
 void Library::search()
 {
 	string userInput;
+	Player::howMany++;
+	Player::items[0] = "Textbook";
 	cout << "You've found your textbook! " << endl << "You're one step closer to getting to that test!" << endl;
 	cout << "You should keep looking for the rest of your supplies." << endl;
 	
@@ -199,6 +207,8 @@ void Moody::exit()
 void Moody::search()
 {
 	string userInput;
+	Player::howMany++;
+	Player::items[1] = "ID Card"; 
 	cout << "You've found your ID card! " << endl << "You're one step closer to getting to that test!" << endl;
 	cout << "You should keep looking for the rest of your supplies." << endl;
 	
@@ -259,6 +269,8 @@ void RecCenter::enter()
 {
 	RecCenter::hasBeenVisited = true; 
 	string userInput;
+	if(Player::items[1] != "ID Card")
+		RecCenter().exit();
 	cout << "You have entered the Rec Center, you think you have left your backpack here. You may search for items by entering in 'Search'. You may leave by entering 'Exit'." << endl;
 	cin >> userInput;
 	bool tryWorked = false;
@@ -278,7 +290,10 @@ void RecCenter::enter()
 void RecCenter::exit()
 {
 	string userInput;
-	cout << "You've exited the Rec Center. What building do you want to look in next?" << endl;
+	if (Player::items[1] != "ID Card")
+		cout << "You could not get into the Rec Center because you do not have your ID" << endl;
+	else
+		cout << "You've exited the Rec Center. What building do you want to look in next?" << endl;
 	cin >> userInput;
 	
 	bool tryWorked = false;
@@ -299,6 +314,8 @@ void RecCenter::exit()
 void RecCenter::search()
 {
 	string userInput;
+	Player::howMany++;
+	Player::items[2] = "Backpack";
 	cout << "You've found your backpack! " << endl << "You're one step closer to getting to that test!" << endl;
 	cout << "You should keep looking for the rest of your supplies." << endl;
 	
@@ -400,6 +417,8 @@ void CampusCenter::exit()
 void CampusCenter::search()
 {
 	string userInput;
+	Player::howMany++;
+	Player::items[3] = "Laptop";
 	cout << "You've found your laptop! " << endl << "You're one step closer to getting to that test!" << endl;
 	cout << "You should keep looking for the rest of your supplies." << endl;
 	
@@ -462,7 +481,7 @@ void BarretHall::enter()
 {
 	BarretHall::hasBeenVisited = true; 
 	string userInput;
-	cout << "You have entered Barret Hall, you think you have left your Object Oriented Programming book here. You may search for items by entering in 'Search'. You may leave by entering 'Exit'." << endl;
+	cout << "You have entered Barret Hall, you think you have left your laptop charger here. You may search for items by entering in 'Search'. You may leave by entering 'Exit'." << endl;
 	cin >> userInput;
 	bool tryWorked = false;
 	while (tryWorked == false)
@@ -502,7 +521,9 @@ void BarretHall::exit()
 void BarretHall::search()
 {
 	string userInput;
-	cout << "You've found your laptop! " << endl << "You're one step closer to getting to that test!" << endl;
+	Player::howMany++;
+	Player::items[4] = "Laptop Charger";
+	cout << "You've found your laptop charger! " << endl << "You're one step closer to getting to that test!" << endl;
 	cout << "You should keep looking for the rest of your supplies." << endl;
 	
 	BarretHall::exit();
@@ -561,6 +582,13 @@ void MBB::enter()
 {
 	MBB::hasBeenVisited = true; 
 	string userInput;
+	for(int i = 0; i < 5; i++)
+	{
+		if(Player::howMany != 5)
+			{
+				MBB().exit();
+			}
+	}
 	cout << "You have entered the Mabee Business Building , you have all of the items.";
 	cout << "You may go to class by entering 'goToClass'." << endl;
 	cin >> userInput;
@@ -581,7 +609,24 @@ void MBB::enter()
 
 void MBB::exit()
 {
-	int doNothing = 5;
+	string userInput;
+	cout << "You do not have all  of your school supplies, you must leave at once. Enter a building you would like to go to.";
+	cin >> userInput;
+	
+	bool tryWorked = false;
+	while (tryWorked == false)
+	{
+		try {
+			// test inputs
+			tryWorked = true;
+			Player::move(userInput);	
+		}
+		catch(Player::invalidMove){
+			
+			cout << "It's not a good idea to go there, you didn't leave any supplies for class there." << endl;
+			cin >> userInput;
+		}
+	}
 }
 void MBB::search()
 {

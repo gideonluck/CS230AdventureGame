@@ -21,8 +21,9 @@ class Player
 		bool exists;
     public:
     	class invalidMove{};
-
-	    Player(){ exists = true; }
+		static string items[5];
+		static int howMany;// {"blah", "blah", "blah", "blah", "blah"};
+	    Player();//{ exists = true; }
         ~Player(){ exists = false; }
         
     	static void move(string userinput);	
